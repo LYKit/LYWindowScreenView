@@ -121,49 +121,6 @@
     }
 }
 
-+ (void)showView:(UIView *)view
-            page:(Class)page
-{
-    UIViewController *currentController = [UIViewController currentViewController];
-    if ([self shareInstance].currentView == nil &&
-        [currentController isMemberOfClass:page]) {
-        UIWindow *window = [UIApplication sharedApplication].delegate.window;
-        [window addSubview:view];
-    } else {
-        LYWindowScreenModel *model = [LYWindowScreenModel new];
-        model.view = view;
-        model.pageClass = page;
-        [[self shareInstance].arrayWaitViews addObject:model];
-    }
-}
-
-+ (void)dismiss:(UIView *)view {
-    if ([self shareInstance].currentView == view) {
-        // 删除当前弹窗
-        [view removeFromSuperview];
-        [[self shareInstance] setCurrentView:nil];
-    } else {
-        // 删除队列中的弹窗
-        for (int i = 0; i < [self shareInstance].arrayWaitViews.count; i++) {
-           LYWindowScreenModel *model = [self shareInstance].arrayWaitViews[i];
-           if (model.view == view) {
-               [[self shareInstance].arrayWaitViews removeObject:model];
-           }
-        }
-    }
-    
-    // 展示下一个弹窗
-    if ([self shareInstance].arrayWaitViews.count > 0) {
-        for (int i = 0; i < [self shareInstance].arrayWaitViews.count; i++) {
-           LYWindowScreenModel *model = [self shareInstance].arrayWaitViews[i];
-           if (model.view) {
-               UIWindow *window = [UIApplication sharedApplication].delegate.window;
-               [window addSubview:view];
-           }
-        }
-    }
-}
-
 // 有待显示的视图时添加监听
 + (void)addWaitShowNotification {
     if (([self shareInstance].arrayWaitViews.count ||
