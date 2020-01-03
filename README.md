@@ -12,12 +12,12 @@
 5、**弹窗不能自动关闭**：例如用户被迫下线，此时app的所有弹窗都应该自动移除，或者弹窗展示情况下app发生页面跳转，避免弹窗忘记关闭的情况，也应该自动移除现有的弹窗。
 
 问题4效果对比-前：
-![t6znx-4jxkk.gif](https://upload-images.jianshu.io/upload_images/7174973-523ac5bfeb22a035.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/150)
+![t6znx-4jxkk.gif](https://upload-images.jianshu.io/upload_images/7174973-523ac5bfeb22a035.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/250)
 
 
 
 问题4效果对比-后：
-![tugcl-llxv1.gif](https://upload-images.jianshu.io/upload_images/7174973-65cf15cc74379153.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/150)
+![tugcl-llxv1.gif](https://upload-images.jianshu.io/upload_images/7174973-65cf15cc74379153.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/250)
 
 
 ###解决方案：
@@ -289,7 +289,7 @@ Swizzle UIViewController的viewWillDisappear方法，当有需要缓存的弹窗
 
 
 大致效果：
-![tu690-6ylp0.gif](https://upload-images.jianshu.io/upload_images/7174973-50acdcffea9209b3.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/150)
+![tu690-6ylp0.gif](https://upload-images.jianshu.io/upload_images/7174973-50acdcffea9209b3.gif?imageMogr2/auto-orient/strip%7CimageView2/2/w/250)
 
 
 
